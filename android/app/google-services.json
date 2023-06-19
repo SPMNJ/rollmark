@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "325264161432",
+    "project_id": "rollmark-app",
+    "storage_bucket": "rollmark-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:325264161432:android:34483ab6f24d34c55daeed",
+        "android_client_info": {
+          "package_name": "com.example.rollmark"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "325264161432-nlcgaf3502unusu5gl0kc4ujph2j6jee.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBd_hlw3jDtSH0EOVQCesxT1ia2mFC3e0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "325264161432-nlcgaf3502unusu5gl0kc4ujph2j6jee.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "325264161432-3vgd5dhgaivo67e93ivfiavn7vundara.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.rollmark.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
