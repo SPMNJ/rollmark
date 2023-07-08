@@ -17,7 +17,9 @@ void main() async {
   );
   if (kIsWeb) {
     usePathUrlStrategy();
-    FirebaseAuth.instanceFor(app: Firebase.app(), persistence: Persistence.LOCAL);
+    // TODO: Uncomment when fixed
+    // Current Broken: https://github.com/firebase/flutterfire/issues/10961
+    //FirebaseAuth.instanceFor(app: Firebase.app(), persistence: Persistence.LOCAL);
   }
 
   if (kDebugMode) {
