@@ -3,7 +3,7 @@
     "firebase-tools": "^12.4.0"
   },
   "scripts": {
-    "emulators:start": "firebase emulators:start --import=./emulate",
+    "emulators:start": "firebase emulators:start --import=./emulate --only firestore,functions,auth,storage",
     "emulators:stop": "npx --yes kill-port 9099 8080 5000 9199 4000 5001"
    }
 }

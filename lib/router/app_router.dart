@@ -94,8 +94,9 @@ final routerProvider = Provider<GoRouter>((ref) {
           ),
         ],
       ),
-    ],
-    redirect: (context, state) {
+    ],  
+    redirect: (context, state) { 
+      return null;
       // If our async state is loading, don't perform redirects, yet
       if (authState.isLoading || authState.hasError) return null;
 
