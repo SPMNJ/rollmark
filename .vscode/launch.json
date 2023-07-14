@@ -9,13 +9,15 @@
             "name": "rollmark",
             "request": "launch",
             "type": "dart",
-            "preLaunchTask": "start-emulators",
-            "postDebugTask": "npm: emulators:stop"
+            "preLaunchTask": "build&debug",
+            "postDebugTask": "npm: emulators:stop",
+            "flutterMode": "debug"
         },
         {
             "name": "rollmark (profile mode)",
             "request": "launch",
             "type": "dart",
+            "preLaunchTask": "build-runner",
             "flutterMode": "profile"
         },
         {
