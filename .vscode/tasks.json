@@ -28,6 +28,25 @@
             }
           }
         ]
+      },
+      //flutter pub run build_runner build
+      {
+        "label": "build_runner",
+        "type": "shell",
+        "command": "dart",
+        "args": [
+          "pub",
+          "run",
+          "build_runner",
+          "build"
+        ],
+      },
+      {
+        "label": "build&debug",
+        "dependsOn": [
+          "start-emulators",
+          "build_runner"
+        ],
       }
     ]
   }
