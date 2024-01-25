@@ -35,7 +35,6 @@
         "type": "shell",
         "command": "dart",
         "args": [
-          "pub",
           "run",
           "build_runner",
           "build"

@@ -5,7 +5,7 @@ import 'package:go_router/go_router.dart';
 import '../constants.dart';
 
 class CreateAccount extends StatefulWidget {
-  const CreateAccount({Key? key}) : super(key: key);
+  const CreateAccount({super.key});
 
   @override
   State<CreateAccount> createState() => _CreateAccountState();

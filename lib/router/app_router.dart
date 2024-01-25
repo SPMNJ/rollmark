@@ -105,14 +105,14 @@ final routerProvider = Provider<GoRouter>((ref) {
       // Returning `null` means "we are not authorized"
       final isAuth = authState.valueOrNull != null;
 
-      final isSplash = state.location == "/";
+      final isSplash = state.uri.toString() == "/";
       if (isSplash) {
         return null;
       }
 
-      final isLoggingIn = state.location == "/login" ||
-          state.location == "/login/forgot-password" ||
-          state.location == "/login/create";
+      final isLoggingIn = state.uri.toString() == "/login" ||
+          state.uri.toString() == "/login/forgot-password" ||
+          state.uri.toString() == "/login/create";
       if (isLoggingIn) return isAuth ? "/home" : null;
 
       return isAuth ? null : "/login";
