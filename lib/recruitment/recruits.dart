@@ -8,6 +8,8 @@ class RecruitPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: GridView.builder(
+        addAutomaticKeepAlives: true,
+        cacheExtent: 1000,
         padding: const EdgeInsets.fromLTRB(20, 20, 20, 10),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
