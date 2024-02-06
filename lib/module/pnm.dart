@@ -21,8 +21,6 @@ class _PNMModuleState extends State<PNMModule> {
 
   @override
   Widget build(BuildContext context) {
-
-    
     Color gradeColor = getGradientColor(_chanceOfJoining);
     return GestureDetector(
       onTap: () => setState(() {
@@ -73,9 +71,7 @@ class _PNMModuleState extends State<PNMModule> {
                         fit: BoxFit.scaleDown,
                         child: Text(
                           "McGuire",
-                          style: TextStyle(
-                              fontSize: 40,
-                              color: gradeColor),
+                          style: TextStyle(fontSize: 40, color: gradeColor),
                         ),
                       ),
                     ],
@@ -88,9 +84,7 @@ class _PNMModuleState extends State<PNMModule> {
                     fit: BoxFit.scaleDown,
                     child: Text(
                       (_chanceOfJoining * 100).toStringAsFixed(0),
-                      style: TextStyle(
-                          fontSize: 40,
-                          color: gradeColor),
+                      style: TextStyle(fontSize: 40, color: gradeColor),
                     ),
                   ),
                 ),

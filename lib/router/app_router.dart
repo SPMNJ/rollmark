@@ -5,6 +5,8 @@ import 'package:rollmark/recruitment/activity.dart';
 import 'package:rollmark/recruitment/mobile_screen.dart';
 import 'package:rollmark/recruitment/recruits.dart';
 import 'package:rollmark/ui/create_page.dart';
+import 'package:rollmark/ui/form_edit_page.dart';
+import 'package:rollmark/ui/form_page.dart';
 
 import '../auth.dart';
 
@@ -91,6 +93,22 @@ final routerProvider = Provider<GoRouter>((ref) {
                     return const RecruitLogPage();
                   }),
             ],
+          ),
+        ],
+      ),
+      GoRoute(
+        path: "/forms",
+        name: "forms",
+        builder: (context, state) {
+          return FormPage();
+        },
+        routes: [
+          GoRoute(
+            path: ":formID",
+            name: "form-edit",
+            builder: (context, state) {
+              return FormEditPage(formID: state.pathParameters["formID"]!);
+            },
           ),
         ],
       ),

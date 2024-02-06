@@ -17,7 +17,7 @@ void main() async {
   );
   if (kIsWeb) {
     usePathUrlStrategy();
-    FirebaseAuth.instance.setPersistence(Persistence.LOCAL);    
+    FirebaseAuth.instance.setPersistence(Persistence.LOCAL);
   }
 
   if (kDebugMode) {
@@ -33,9 +33,6 @@ void main() async {
   FirebaseFirestore.instance.settings = const Settings(
     persistenceEnabled: true,
   );
-  FirebaseFirestore.instance.enablePersistence(const PersistenceSettings(
-    synchronizeTabs: true,
-  ));
   // ignore: prefer_const_constructors
   runApp(ProviderScope(child: MyApp()));
 }
@@ -50,6 +47,7 @@ class MyApp extends ConsumerWidget {
     return MaterialApp.router(
         title: 'Rollmark',
         theme: ThemeData(
+          useMaterial3: false,
           primarySwatch: Colors.blue,
         ),
         routerDelegate: appRouter.routerDelegate,
