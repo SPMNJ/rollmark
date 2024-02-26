@@ -2,21 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:rollmark/auth.dart';
+import 'package:rollmark/provider.dart';
 import 'package:rollmark/dto/form_data.dart';
 import 'package:rollmark/module/form_card.dart';
 
 class FormPage extends ConsumerWidget {
   FormPage({super.key});
 
-  final formProvider = StreamProvider<List<FormData>>((ref) {
+  final formProvider = StreamProvider<List<FormDoc>>((ref) {
     final userStream = ref.watch(authProvider);
 
     if (userStream.value != null) {
       var docRef = FirebaseFirestore.instance.collection('forms');
       return docRef.snapshots().map((snapshot) {
         return snapshot.docs.map((doc) {
-          return FormData.fromDocument(doc);
+          return FormDoc.fromDocument(doc);
         }).toList();
       });
     } else {
@@ -32,25 +32,7 @@ class FormPage extends ConsumerWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          try {
-            FirebaseFirestore.instance
-                .collection('forms')
-                .add(FormData.empty().toDocument())
-                .then((value) => GoRouter.of(context).go('/forms/${value.id}'));
-          } catch (e) {
-            AlertDialog(
-              title: const Text('Error'),
-              content: Text('Error: $e'),
-              actions: [
-                TextButton(
-                  onPressed: () {
-                    context.pop();
-                  },
-                  child: const Text('OK'),
-                )
-              ],
-            );
-          }
+          context.go('/forms/new');
         },
         child: const Icon(Icons.add),
       ),
@@ -66,8 +48,8 @@ class FormPage extends ConsumerWidget {
                   itemBuilder: (context, index) {
                     return GestureDetector(
                       onTap: () {
-                        // Navigate to form edit page
-                        GoRouter.of(context).go('/forms/${data[index].id}');
+                        GoRouter.of(context)
+                            .go('/forms/${data[index].id}', extra: data[index]);
                       },
                       child: FormCard(formData: data[index]),
                     );

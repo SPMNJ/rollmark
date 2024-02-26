@@ -19,7 +19,7 @@ enum FormInputType {
 class FormInputData with _$FormInputData {
   const FormInputData._();
 
-  factory FormInputData({
+  const factory FormInputData({
     required String label,
     required String prompt,
     // ignore: invalid_annotation_target
@@ -28,7 +28,7 @@ class FormInputData with _$FormInputData {
     required bool require,
   }) = _FormInputData;
 
-  factory FormInputData.empty() => FormInputData(
+  factory FormInputData.empty() => const FormInputData(
         label: '',
         prompt: '',
         type: FormInputType.text,

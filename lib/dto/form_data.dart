@@ -6,10 +6,10 @@ part 'form_data.freezed.dart';
 part 'form_data.g.dart';
 
 @freezed
-class FormData with _$FormData {
-  const FormData._();
+class FormDoc with _$FormDoc {
+  const FormDoc._();
 
-  factory FormData({
+  const factory FormDoc({
     String? id,
     required String title,
     required String description,
@@ -17,20 +17,20 @@ class FormData with _$FormData {
     @JsonKey(
         fromJson: FormInputData.listFromJson, toJson: FormInputData.listToJson)
     required List<FormInputData> inputs,
-  }) = _FormData;
+  }) = _F;
 
-  factory FormData.empty() => FormData(
+  factory FormDoc.empty() => FormDoc(
         title: 'New Form',
         description: '',
-        inputs: [],
+        inputs: [FormInputData.empty()],
       );
 
-  factory FormData.fromJson(Map<String, dynamic> json) =>
-      _$FormDataFromJson(json);
+  factory FormDoc.fromJson(Map<String, dynamic> json) =>
+      _$FormDocFromJson(json);
 
-  factory FormData.fromDocument(DocumentSnapshot doc) {
+  factory FormDoc.fromDocument(DocumentSnapshot doc) {
     final data = doc.data() as Map<String, dynamic>;
-    return FormData.fromJson(data).copyWith(id: doc.id);
+    return FormDoc.fromJson(data).copyWith(id: doc.id);
   }
 
   Map<String, dynamic> toDocument() => toJson()..remove('id');

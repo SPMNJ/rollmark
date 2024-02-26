@@ -4,7 +4,7 @@ import 'package:rollmark/dto/form_data.dart';
 class FormCard extends StatelessWidget {
   const FormCard({super.key, required this.formData});
 
-  final FormData formData;
+  final FormDoc formData;
 
   @override
   Widget build(BuildContext context) {
