@@ -4,3 +4,5 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 final authProvider = StreamProvider<User?>((ref) {
   return FirebaseAuth.instance.userChanges();
 });
+
+final formEditing = StateProvider<bool>((ref) => false);

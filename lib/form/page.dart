@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:rollmark/dto/form_data.dart';
 import 'package:rollmark/dto/form_input_data.dart';
-import 'package:rollmark/module/form_edit_card.dart';
+import 'package:rollmark/form/card.dart';
 
 class FormEditPage extends StatefulWidget {
   final String formID;
